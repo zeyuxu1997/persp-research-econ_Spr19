@@ -1,8 +1,8 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 
-\title{Method&Result}
-\author{zeyuxu1997 }
+\title{Method \& Result}
+\author{Zeyu Xu}
 \date{May 2019}
 
 \usepackage{natbib}
@@ -63,9 +63,10 @@ Loss_{t+1} &=& \frac{1}{n} \sum_{i} \frac{|population_{i,t+1} - \widehat{populat
 \includegraphics[width=1.2\textwidth]{graph1.png} 
 \includegraphics[width=1.2\textwidth]{graph2.png} 
 \end{figure}
+
 \section{Model Application \& Result}
 \subsection{Result of Basic Model}
-\ \ \ \ This part analyzes the prediction based on the basic model. Chicago has 62 blocks with nonzero population. In this part, I use mean income and exact percentage of specific ethnic group as features of the block. Given parameter, I can make prediction on population of each block based on their features last year and calculate the loss function. Since there are other minorities and the model doesn't include transition matrix for income, it's better to make one-period prediction every year rather than simulate a series of data. After training, I get parameters as follows:
+\ \ \ \ This part analyzes the prediction based on the basic model. Chicago has 62 blocks with nonzero population. In this part, I use mean income and exact percentage of specific ethnic group as features of the block. Given parameter, I can make prediction on population of each block based on their features last year and calculate the loss function. Researches have shown that blacks and whites have different tolerance to ethnic groups other than themselves (Charles, 2003\cite{Charles}; Zhang, 2011\cite{Zhang2011}), so it's better to set different parameters for them. Since there are other minorities and the model doesn't include transition matrix for income, it's better to make one-period prediction every year rather than simulate a series of data. After training, I get parameters as follows:
 \begin{eqnarray}
 r_{black} = 0.98, \beta_{1,black} = -5.05, \beta_{2,black} = 88.21 \nonumber \\
 r_{white} = 0.98, \beta_{1,white} = -7.51, \beta_{2,white} = 14.95 \nonumber
@@ -107,6 +108,7 @@ weighted average      &  0.053757 &  0.036604 &  0.032497 &  0.030143 &  0.02740
 \bottomrule
 \end{tabular}
 \end{table}
+
 \subsection{Discussion on Income}
 \ \ \ \ This section focus on the impact of income factor on people's migration decision and its significance to the model.
 \subsubsection{The choice of income}
